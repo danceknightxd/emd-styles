@@ -23,6 +23,28 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap');
 
+/* ── UNIVERSAL RX-ITEM FIX — flex not grid, prevents vertical letter stacking ── */
+.emd-post-34 .rx-item,.emd-post-35 .rx-item,.emd-post-36 .rx-item,
+.emd-post-37 .rx-item,.emd-post-38 .rx-item,.emd-post-39 .rx-item{
+  display:flex !important;flex-direction:row !important;
+  align-items:flex-start !important;gap:.8rem !important;
+  word-break:normal !important;overflow-wrap:anywhere !important;
+}
+.emd-post-34 .rx-num,.emd-post-35 .rx-num,.emd-post-36 .rx-num,
+.emd-post-37 .rx-num,.emd-post-38 .rx-num,.emd-post-39 .rx-num{
+  flex-shrink:0 !important;min-width:1.8rem !important;
+}
+.emd-post-34 .rx-item>span:last-child,
+.emd-post-35 .rx-item>span:last-child,
+.emd-post-36 .rx-item>span:last-child,
+.emd-post-37 .rx-item>span:last-child,
+.emd-post-38 .rx-item>span:last-child,
+.emd-post-39 .rx-item>span:last-child{
+  flex:1 !important;min-width:0 !important;
+  word-break:normal !important;overflow-wrap:anywhere !important;
+}
+
+
 /* ══════════════════════════════════════════════
    EMD THESIS SERIES — GLOBAL POST STYLES
    Covers Posts 34, 35, 36, 37
@@ -417,12 +439,12 @@
 }
 .emd-post-34 .rx-item,.emd-post-35 .rx-item,
 .emd-post-36 .rx-item,.emd-post-37 .rx-item{
-  display:grid;grid-template-columns:2rem 1fr;gap:.8rem;
-  align-items:start;font-size:.92rem;color:#666;line-height:1.65;
+  display:flex;flex-direction:row;align-items:flex-start;
+  gap:.8rem;font-size:.92rem;color:#666;line-height:1.65;
 }
 .emd-post-34 .rx-num,.emd-post-35 .rx-num,
 .emd-post-36 .rx-num,.emd-post-37 .rx-num{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.05rem;line-height:1.4;
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.05rem;line-height:1.4;flex-shrink:0;min-width:1.8rem;
 }
 .emd-post-34 .rx-num{color:#0097a7;}
 .emd-post-35 .rx-num{color:#e84118;}
@@ -625,8 +647,8 @@
 .emd-post-38 .prescription{background:#1c1c1c;border-top:3px solid #00897b;padding:2.5rem 1.8rem;margin:3rem 0;border-radius:0 0 4px 4px;}
 .emd-post-38 .prescription-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.65rem;letter-spacing:.32em;text-transform:uppercase;color:#00897b;margin-bottom:1.5rem;display:block;}
 .emd-post-38 .rx-list{list-style:none;display:flex;flex-direction:column;gap:1.1rem;padding:0;margin:0;}
-.emd-post-38 .rx-item{display:grid;grid-template-columns:2rem 1fr;gap:.8rem;align-items:start;font-size:.92rem;color:#666;line-height:1.65;}
-.emd-post-38 .rx-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.05rem;color:#00897b;line-height:1.4;}
+.emd-post-38 .rx-item{display:flex;flex-direction:row;align-items:flex-start;gap:.8rem;font-size:.92rem;color:#666;line-height:1.65;}
+.emd-post-38 .rx-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.05rem;color:#00897b;line-height:1.4;flex-shrink:0;min-width:1.8rem;}
 
 /* Monument */
 .emd-post-38 .monument{background:#1c1c1c;border:1px solid rgba(0,137,123,.2);padding:3rem 2rem;margin:4rem 0 2rem;border-radius:4px;text-align:center;overflow:hidden;}
@@ -781,8 +803,8 @@
 .emd-post-39 .prescription{background:#1c1c1c;border-top:3px solid #c62828;padding:2.5rem 1.8rem;margin:3rem 0;border-radius:0 0 4px 4px;}
 .emd-post-39 .prescription-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.65rem;letter-spacing:.32em;text-transform:uppercase;color:#c62828;margin-bottom:1.5rem;display:block;}
 .emd-post-39 .rx-list{list-style:none;display:flex;flex-direction:column;gap:1.1rem;padding:0;margin:0;}
-.emd-post-39 .rx-item{display:grid;grid-template-columns:2rem 1fr;gap:.8rem;align-items:start;font-size:.92rem;color:#777;line-height:1.65;}
-.emd-post-39 .rx-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.05rem;color:#c62828;line-height:1.4;}
+.emd-post-39 .rx-item{display:flex;flex-direction:row;align-items:flex-start;gap:.8rem;font-size:.92rem;color:#777;line-height:1.65;}
+.emd-post-39 .rx-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.05rem;color:#c62828;line-height:1.4;flex-shrink:0;min-width:1.8rem;}
 
 /* Monument */
 .emd-post-39 .monument{background:#1c1c1c;border:1px solid rgba(198,40,40,.2);padding:3rem 1.5rem;margin:4rem 0 2rem;border-radius:4px;text-align:center;overflow:hidden;}
@@ -818,38 +840,6 @@
   .emd-post-39 h1.hero-title{font-size:2rem;}
 }
 
-/* ══════════════════════════════════════════════
-   POST 37 — PRESCRIPTION FIX
-   rx-item grid was collapsing text column to zero
-   on Blogger's narrow content column
-══════════════════════════════════════════════ */
-
-.emd-post-37 .prescription {
-  padding: 2rem 1rem !important;
-  overflow: hidden !important;
-}
-
-.emd-post-37 .rx-list {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 1.2rem !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  width: 100% !important;
-}
-
-.emd-post-37 .rx-item {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: flex-start !important;
-  gap: .8rem !important;
-  font-size: .9rem !important;
-  color: #777 !important;
-  line-height: 1.65 !important;
-  width: 100% !important;
-  word-break: normal !important;
-  overflow-wrap: anywhere !important;
-}
 
 .emd-post-37 .rx-num {
   font-family: 'Barlow Condensed', sans-serif !important;
